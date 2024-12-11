@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Recall_Project.Context;
 using Recall_Project.Entities;
@@ -15,6 +16,7 @@ namespace Recall_Project.Controllers
             _context= context;
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult GetProducts()
         {
